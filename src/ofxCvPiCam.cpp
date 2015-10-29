@@ -253,7 +253,7 @@ int ofxCvPiCam::setAWBMode(MMAL_PARAM_AWBMODE_T awb_mode){
 
 int ofxCvPiCam::setFlickerAvoid(MMAL_PARAM_FLICKERAVOID_T flickr_avoid){
 	
-	MMAL_PARAMETER_AWBMODE_T param = {{MMAL_PARAMETER_FLICKER_AVOID,sizeof(param)}, flickr_avoid};
+	MMAL_PARAMETER_FLICKERAVOID_T param = {{MMAL_PARAMETER_FLICKER_AVOID,sizeof(param)}, flickr_avoid};
 	
 	if (!camera)
 		return 1;

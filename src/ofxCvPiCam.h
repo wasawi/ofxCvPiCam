@@ -115,7 +115,13 @@ public:
      * @return
      */
     int setAWBMode(MMAL_PARAM_AWBMODE_T awb_mode);
-    /**
+	/**
+	 * @brief setFlickerAvoid
+	 * @param flickr_avoid (0,4)
+	 * @return
+	 */
+	int setFlickerAvoid(MMAL_PARAM_FLICKERAVOID_T flickr_avoid);
+	/**
      * @brief setAWBGains
      * @param r_gain (0.0,1.0)
      * @param b_gain (0.0,1.0)

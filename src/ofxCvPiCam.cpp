@@ -250,6 +250,16 @@ int ofxCvPiCam::setAWBMode(MMAL_PARAM_AWBMODE_T awb_mode){
 
     return mmal_status_to_int(mmal_port_parameter_set(camera->control, &param.hdr));
 }
+
+int ofxCvPiCam::setFlickerAvoid(MMAL_PARAM_FLICKERAVOID_T flickr_avoid){
+	
+	MMAL_PARAMETER_AWBMODE_T param = {{MMAL_PARAMETER_FLICKER_AVOID,sizeof(param)}, flickr_avoid};
+	
+	if (!camera)
+		return 1;
+	
+	return mmal_status_to_int(mmal_port_parameter_set(camera->control, &param.hdr));
+}
 int ofxCvPiCam::setAWBGains(float r_gain, float b_gain){
     MMAL_PARAMETER_AWB_GAINS_T param = {{MMAL_PARAMETER_CUSTOM_AWB_GAINS,sizeof(param)}, {0,0}, {0,0}};
 
